@@ -57,7 +57,6 @@
 ## Orchestration & CI/CD
 - **Azure Data Factory or Databricks Workflows**: Schedule and orchestrate both batch and streaming ETL processes.
 - **GitHub Actions**: Implement CI/CD pipelines for:
-  - Infrastructure provisioning with Terraform.
   - Automated deployment and testing of Databricks jobs and notebooks.
   - Continuous integration to ensure code quality and reliability.
 
