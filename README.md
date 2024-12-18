@@ -38,6 +38,40 @@
 
 ## High-Level Architecture
 
+flowchart LR
+
+    %% Style and formatting
+    classDef azure fill=#0078D4,stroke=#fff,color=#fff,stroke-width=1px;
+    classDef databricks fill=#FF3621,stroke=#fff,color=#fff,stroke-width=1px;
+    classDef storage fill=#0A2E5C,stroke=#fff,color=#fff,stroke-width=1px;
+    classDef ci fill=#2088FF,stroke=#fff,color=#fff,stroke-width=1px;
+
+    %% Nodes
+    A[User/Client]:::azure -->|Requests Real-Time Data| B[Stock Market API (e.g., Polygon.io)]
+    B -->|Push Stream| C[Azure Event Hubs]:::azure
+
+    C -->|Ingest Streaming Data| D[Azure Data Lake Storage Gen2]:::azure
+    D -->|Delta Lake Format| E[Databricks (ETL & Delta Live Tables)]:::databricks
+    E -->|Cleaned & Aggregated Data| F[Curated Delta Tables]:::storage
+    F -->|SQL/Direct Query| G[Power BI / Synapse]:::azure
+
+    %% CI/CD & Orchestration
+    H[GitHub Actions (CI/CD)]:::ci -->|Deploy Infrastructure (Terraform)| I[Azure Infrastructure]:::azure
+    H -->|Deploy Notebooks, Jobs| E
+    J[Azure Data Factory / Databricks Workflows]:::azure -->|Schedule & Orchestrate| E
+
+    %% Security
+    K[Azure Key Vault]:::azure -->|Secrets| E
+    K -->|Secrets| H
+
+    %% RBAC
+    I -->|RBAC Controls| E
+    I -->|RBAC Controls| D
+
+    %% Arrows and positioning
+    E -->|Aggregated Metrics| G
+
+
 ## Data Ingestion & Streaming
 - **Source**: Real-time stock market tick data from an API.
 - **Azure Event Hubs**: Ingest and stream JSON-formatted market data events in near real-time.
