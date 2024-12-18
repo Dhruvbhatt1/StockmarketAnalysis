@@ -39,7 +39,7 @@
 
 
 ## Data Ingestion & Streaming
-- **Source**: Real-time stock market tick data from an API.
+- **Source**: Real-time stock market tick data from an Dummy Data.
 - **Azure Event Hubs**: Ingest and stream JSON-formatted market data events in near real-time.
 
 ## Storage & Lakehouse Architecture
