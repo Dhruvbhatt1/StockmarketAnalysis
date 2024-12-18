@@ -1,4 +1,4 @@
-# StockmarketAnalysis
+# Stock Market Analysis
 
 ### Built With
 
