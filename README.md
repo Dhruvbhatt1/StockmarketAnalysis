@@ -1,6 +1,6 @@
 # StockmarketAnalysis
 
-# High-Level Architecture
+## High-Level Architecture
 
 ## Data Ingestion & Streaming
 - **Source**: Real-time stock market tick data from an API.
