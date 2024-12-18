@@ -7,7 +7,6 @@
 * [![Delta Lake][DeltaLake]][DeltaLake-url]
 * [![Azure Data Factory][ADF]][ADF-url]
 * [![Power BI][PowerBI]][PowerBI-url]
-* [![Terraform][Terraform]][Terraform-url]
 * [![GitHub Actions][GitHubActions]][GitHubActions-url]
 * [![Azure Key Vault][KeyVault]][KeyVault-url]
 
